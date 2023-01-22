@@ -4,8 +4,8 @@ import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../Layout/Main'
 import CartItem from './CartItem'
-import { toast } from 'react-toastify'
 import { modifyDB, removeDB } from '../utils/fakedb'
+import { toast } from 'react-hot-toast'
 
 const Cart = () => {
   const [cart, setCart] = useContext(CartContext);
@@ -17,11 +17,12 @@ const Cart = () => {
     if (remaining.length === 0) {
       removeDB();
     }
-    // toast.success('Product Removed!',{autoClose: 540});
+    toast.error('Successfully remove from cart!');
   }
   const handlePlaceOrder = () => {
     setCart([]);
     removeDB();
+    toast.error('Successfully remove all !!!');
   }
   let total = 0
 

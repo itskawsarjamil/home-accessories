@@ -2,13 +2,13 @@
 import { RouterProvider } from 'react-router-dom';
 import './App.css';
 import { routes } from './components/Routes/Route';
-import { ToastContainer } from 'react-toastify';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
 
   return (
     <div className="App">
-      
+      <Toaster></Toaster>
       <RouterProvider router={routes}>
       </RouterProvider>
     </div>

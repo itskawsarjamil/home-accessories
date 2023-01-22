@@ -4,6 +4,7 @@ import { useContext } from 'react';
 import { CartContext, ProductContext } from '../Layout/Main';
 import Product from './Product';
 import {modifyDB} from '../utils/fakedb';
+import { toast } from 'react-hot-toast';
 const Shop = () => {
 
   const productsData = useContext(ProductContext);
@@ -33,7 +34,7 @@ const Shop = () => {
     }
     setCart(newCart);
     modifyDB(newCart);
-
+    toast.success('Successfully added to cart!');
   }
 
 
